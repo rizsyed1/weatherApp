@@ -14,14 +14,12 @@ class App extends Component {
       temperature: '',
     }
 
-    this.fetchWeather = this.fetchWeather.bind(this);
-    this.keyPress = this.keyPress.bind(this);
-
   }
 
   fetchWeather = () => {
     let cityName = this.state.city;
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=a1a331f3fdba57d905c6274db55f1dc4`, {cache: 'no-store'})
+      .then(response => response.json())
       .then(data => {
         this.setState({
           main: data['weather']['main'],
@@ -34,6 +32,7 @@ class App extends Component {
 
   keyPress = key => {
     if (key.keyCode === 13) {
+      console.log(this.state.city);
       this.fetchWeather()
     } else {
       this.setState({

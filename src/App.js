@@ -30,22 +30,21 @@ class App extends Component {
       )
   }
 
-  keyPress = key => {
-    if (key.keyCode === 13) {
-      console.log(this.state.city);
-      this.fetchWeather()
-    } else {
+  setCity = (newCity) => {
       this.setState({
-        city: this.state.city + key
-      })
-    }
+        city: newCity
+      });
+    this.fetchWeather()
   }
+
+
+
 
 
   render() {
     return (
       <div className="App">
-        <FormComponent handleKeyDown={this.keyPress} />
+        <FormComponent setCity={this.setCity} city={this.state.city} />
         <WeatherComponent main={this.state.main} description={this.state.description} temperature={this.state.temperature} />
       </div>
     );

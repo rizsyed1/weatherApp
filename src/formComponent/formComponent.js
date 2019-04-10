@@ -1,5 +1,6 @@
 import React from 'react';
 import SubmitComponent from '../submitComponent/submitComponent.js';
+import TextboxComponent from '../textboxComponent/textboxComponent.js';
 
 class FormComponent extends React.Component {
   constructor(props){
@@ -38,7 +39,7 @@ class FormComponent extends React.Component {
     return (
       <form>
         <label> Country:
-          <input type='text' value={this.state.city} placeholder='city' onChange={this.handleChange}/>
+        <TextboxComponent city={this.state.city}  handleChange={this.handleChange}/>
         </label>
         <SubmitComponent handleSubmit={this.handleSubmit} />
       </form>

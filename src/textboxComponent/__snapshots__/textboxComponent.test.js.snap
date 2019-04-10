@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextboxComponent should have a consistent structure 1`] = `
+<Textbox>
+  <input
+    placeholder="city"
+    type="text"
+  />
+</Textbox>
+`;

@@ -1,9 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import SubmitComponent from './submitComponent/submitComponent.js';
+import toJson from 'enzyme-to-json'
+import SubmitComponent from './submitComponent.js';
 
 describe('SubmitComponent should', () => {
-    if ('exist', () => {
+    it ('exist', () => {
         expect(SubmitComponent).toBeDefined()   
     });
+
+    it('have a consistent structure', () => {
+        const wrapper = mount(<SubmitComponent />)
+        expect(toJson(wrapper)).toMatchSnapshot()
+    })
 })

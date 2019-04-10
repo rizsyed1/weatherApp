@@ -15,6 +15,12 @@ class FormComponent extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.props.setWeatherData(data)
+      }).catch(err => {
+        if(err == "TypeError: Cannot read property '0' of undefined") {
+          alert('Please ensure you have entered a valid city name and try again')  
+        } else {
+          console.log(err)
+        }
       })
     }
 

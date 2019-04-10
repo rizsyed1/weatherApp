@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubmitComponent should have a consistent structure 1`] = `
+<SubmitComponent>
+  <input
+    type="submit"
+    value="submit"
+  />
+</SubmitComponent>
+`;

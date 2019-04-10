@@ -1,4 +1,5 @@
 import React from 'react';
+import SubmitComponent from '../submitComponent/submitComponent.js';
 
 class FormComponent extends React.Component {
   constructor(props){
@@ -29,11 +30,11 @@ class FormComponent extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <label> Country:
           <input type='text' value={this.state.city} placeholder='city' onChange={this.handleChange}/>
         </label>
-        <input type='submit' value='submit' onClick={this.handleSubmit} />
+        <SubmitComponent handleSubmit={this.handleSubmit} />
       </form>
     )
   }

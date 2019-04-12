@@ -9,15 +9,15 @@ class App extends Component {
     super(props);
 
     this.state = {
-      city: '',
-      description: '',
-      temperature: '',
+      city: 'City',
+      description: 'Description',
+      temperature: 'Temperature',
     }
 }
 
   setWeatherData = data =>{
     this.setState({
-      city: data['name'],
+      city: 'Weather forecast for' + data['name'],
       description: data['weather'][0]['description'] ,
       temperature: data['main']['temp']
     })
@@ -29,9 +29,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <FormComponent fetchWeather={this.fetchWeather} setWeatherData={this.setWeatherData} />
-        <WeatherComponent icon={faCloudSunRain} city={this.state.city} main={this.state.main} description={this.state.description} temperature={this.state.temperature} />
+      <div className="weatherApp">
+        <WeatherComponent 
+            icon={faCloudSunRain} 
+            city={this.state.city} 
+            main={this.state.main} 
+            description={this.state.description} 
+            temperature={this.state.temperature} 
+        />
+        <FormComponent 
+          fetchWeather={this.fetchWeather} 
+          setWeatherData={this.setWeatherData}
+        />
       </div>
     );
   }

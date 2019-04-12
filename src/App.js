@@ -17,7 +17,7 @@ class App extends Component {
 
   setWeatherData = data =>{
     this.setState({
-      location: 'Weather forecast for' + data['name'],
+      location: 'Weather forecast for ' + data['name'],
       description: data['weather'][0]['description'] ,
       temperature: data['main']['temp']
     })

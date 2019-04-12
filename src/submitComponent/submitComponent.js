@@ -1,8 +1,9 @@
 import React from 'react';
+import './submitComponent.css';
 
 function SubmitComponent({handleSubmit}) {
     return (
-        <input type='submit' value='submit' onClick={handleSubmit} />
+        <input className='submitBox' type='submit' value='submit' onClick={handleSubmit} />
     )  
 }
 

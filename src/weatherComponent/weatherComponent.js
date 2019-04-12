@@ -4,16 +4,16 @@ import './weatherComponent.css';
 import Clock from 'react-live-clock';
 
 
-function WeatherComponent({icon, description, temperature, city}) {
+function WeatherComponent({icon, description, temperature, location}) {
   return (
-    <div className='container'>
+    <div className='cityNameContainer'>
       <p 
       className='cityName'>
         <FontAwesomeIcon 
           className='weatherIcon' 
           icon={icon} 
         />
-      weather forcast for {city}</p>
+      {location}</p>
       <div className='forecastContainer'>
         <Clock format={'HH:mm:ss'} ticking={true} timezone={'UK'}/> 
         <h4>{description}</h4>

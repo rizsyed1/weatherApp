@@ -3,10 +3,6 @@ h4{
     font-size: 50px;
 }
 
-.container {
-    color: white;
-}
-
 .cityName{
     font-size: 70px;
 }
@@ -19,6 +15,7 @@ time{
 .forecastContainer{
     display: flex;
     justify-content: space-around;
-    margin-left: 500px;
-    margin-right: 500px;
+    margin-left: 20%;
+    margin-right: 20%;
+
 }

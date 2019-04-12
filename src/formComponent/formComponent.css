@@ -1,0 +1,18 @@
+.formContainer{
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: #7A9D96;
+    color: white;	
+    
+}
+
+.label{
+    font-size: 50px;
+    text-align: left;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.textAndSubmitComponents{
+    display: inline-block;
+}

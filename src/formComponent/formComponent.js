@@ -1,6 +1,7 @@
 import React from 'react';
 import SubmitComponent from '../submitComponent/submitComponent.js';
 import TextboxComponent from '../textboxComponent/textboxComponent.js';
+import './formComponent.css';
 
 class FormComponent extends React.Component {
   constructor(props){
@@ -12,7 +13,7 @@ class FormComponent extends React.Component {
 
   fetchWeather = () => {
     let cityName = this.state.city;
-    let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=a1a331f3fdba57d905c6274db55f1dc4`
+    let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=a1a331f3fdba57d905c6274db55f1dc4`
     fetch(weatherAPI, {cache: 'no-store'})
       .then(response => response.json())
       .then(data => {
@@ -32,17 +33,16 @@ class FormComponent extends React.Component {
   }
 
   handleChange = (event) => {
-    this.setState({city: event.target.value});
+    this.setState({city: event.target.value}); 
   }
 
 
   render() {
     return (
-      <form>
-        <label> Country:
-        <TextboxComponent city={this.state.city}  handleChange={this.handleChange}/>
-        </label>
-        <SubmitComponent handleSubmit={this.handleSubmit} />
+      <form className='formContainer'>
+        <p className='label'>Find a forecast</p>
+          <TextboxComponent className='textAndSubmitComponents' city={this.state.city}  handleChange={this.handleChange}/>
+          <SubmitComponent className='textAndSubmitComponents' handleSubmit={this.handleSubmit} />
       </form>
     )
   }

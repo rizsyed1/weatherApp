@@ -1,8 +1,9 @@
 import React from 'react';
+import './textboxComponent.css'
 
-function Textbox({city, handleChange}){
+function Textbox({location, handleChange}){
     return(
-        <input type='text' value={city} placeholder='city' onChange={handleChange}/>
+        <input className='textBox' type='text' value={location} placeholder='Search for location' onChange={handleChange}/>
     )
 }
 

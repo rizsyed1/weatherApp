@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import FormComponent from './formComponent/formComponent.js';
 import WeatherComponent from './weatherComponent/weatherComponent.js';
+import { faCloudSunRain } from '@fortawesome/free-solid-svg-icons'
 
 class App extends Component {
   constructor(props){
@@ -9,17 +10,14 @@ class App extends Component {
 
     this.state = {
       city: '',
-      main: '',
       description: '',
       temperature: '',
     }
 }
 
   setWeatherData = data =>{
-    console.log('weatherData', data)
     this.setState({
       city: data['name'],
-      main: data['weather'][0]['main'],
       description: data['weather'][0]['description'] ,
       temperature: data['main']['temp']
     })
@@ -33,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <FormComponent fetchWeather={this.fetchWeather} setWeatherData={this.setWeatherData} />
-        <WeatherComponent city={this.state.city} main={this.state.main} description={this.state.description} temperature={this.state.temperature} />
+        <WeatherComponent icon={faCloudSunRain} city={this.state.city} main={this.state.main} description={this.state.description} temperature={this.state.temperature} />
       </div>
     );
   }

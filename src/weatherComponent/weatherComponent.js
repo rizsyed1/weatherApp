@@ -1,11 +1,12 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function WeatherComponent({main, description, temperature, city}) {
+
+function WeatherComponent({icon, description, temperature, city}) {
   return (
     <div>
-      <p>weather</p>
-      <h4>{city}</h4>
-      <h4> {main}</h4>
+      <p>Weather forecast for {city}</p>
+      <FontAwesomeIcon className='weatherIcon' icon={icon} />
       <h4>{description}</h4>
       <h4>{temperature}</h4>
     </div>

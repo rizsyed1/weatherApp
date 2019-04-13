@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudSunRain } from '@fortawesome/free-solid-svg-icons'
+import Clock from 'react-live-clock';
 import SubmitComponent from '../submitComponent/submitComponent.js';
 import TextboxComponent from '../textboxComponent/textboxComponent.js';
 import './formComponent.css';
@@ -40,9 +43,12 @@ class FormComponent extends React.Component {
   render() {
     return (
       <form className='formContainer'>
-        <p className='label'>Find a forecast</p>
           <TextboxComponent className='textAndSubmitComponents' city={this.state.city}  handleChange={this.handleChange}/>
           <SubmitComponent className='textAndSubmitComponents' handleSubmit={this.handleSubmit} />
+          <div className='iconClockContainer'>
+            <span className='label'><FontAwesomeIcon className='weatherIcon' icon={faCloudSunRain} />Find a forecast</span>
+            <Clock className='time' format={'HH:mm:ss'} ticking={true} timezone={'UK'}/>
+          </div>
       </form>
     )
   }

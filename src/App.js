@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import FormComponent from './formComponent/formComponent.js';
 import WeatherComponent from './weatherComponent/weatherComponent.js';
-import { faCloudSunRain } from '@fortawesome/free-solid-svg-icons'
+
 
 class App extends Component {
   constructor(props){
@@ -35,11 +35,11 @@ class App extends Component {
           setWeatherData={this.setWeatherData}
         />
         <WeatherComponent 
-            icon={faCloudSunRain} 
-            location={this.state.location} 
-            main={this.state.main} 
-            description={this.state.description} 
-            temperature={this.state.temperature} 
+          
+          location={this.state.location} 
+          main={this.state.main} 
+          description={this.state.description} 
+          temperature={this.state.temperature} 
         />
       </div>
     );

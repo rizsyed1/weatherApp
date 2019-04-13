@@ -43,12 +43,12 @@ class FormComponent extends React.Component {
   render() {
     return (
       <form className='formContainer'>
-          <TextboxComponent className='textAndSubmitComponents' city={this.state.city}  handleChange={this.handleChange}/>
-          <SubmitComponent className='textAndSubmitComponents' handleSubmit={this.handleSubmit} />
-          <div className='iconClockContainer'>
-            <span className='label'><FontAwesomeIcon className='weatherIcon' icon={faCloudSunRain} />Find a forecast</span>
-            <Clock className='time' format={'HH:mm:ss'} ticking={true} timezone={'UK'}/>
-          </div>
+        <TextboxComponent className='textAndSubmitComponents' city={this.state.city}  handleChange={this.handleChange}/>
+        <SubmitComponent className='textAndSubmitComponents' handleSubmit={this.handleSubmit} />
+        <div className='iconClockContainer'>
+          <span className='label'><FontAwesomeIcon className='weatherIcon' icon={faCloudSunRain} />Find a forecast</span>
+          <Clock className='time' format={'HH:mm:ss'} ticking={true} timezone={'UK'}/>
+        </div>
       </form>
     )
   }

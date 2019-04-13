@@ -2,18 +2,18 @@
     margin-left: 25%;
     margin-right: 25%;
     background-color: #7A9D96;
-    color: white;	
+    color: white;
+    padding: 0.3% 0.6%;	
     
 }
 
 .iconClockContainer{
     display: flex;
-    flex-direction: row;
-
+    justify-content: space-between;
 }
 
 time{
-    padding-top: -55px;
+    padding-top: 17px;
     font-size: 50px;
 }
 

@@ -30,16 +30,16 @@ class App extends Component {
   render() {
     return (
       <div className="weatherApp">
+        <FormComponent 
+          fetchWeather={this.fetchWeather} 
+          setWeatherData={this.setWeatherData}
+        />
         <WeatherComponent 
             icon={faCloudSunRain} 
             location={this.state.location} 
             main={this.state.main} 
             description={this.state.description} 
             temperature={this.state.temperature} 
-        />
-        <FormComponent 
-          fetchWeather={this.fetchWeather} 
-          setWeatherData={this.setWeatherData}
         />
       </div>
     );

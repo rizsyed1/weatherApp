@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import FormComponent from './formComponent/formComponent.js';
-import WeatherComponent from './weatherComponent/weatherComponent.js';
+import Form from './Form/Form.js';
+import WeatherDisplay from './WeatherDisplay/WeatherDisplay.js';
 
 
 class App extends Component {
@@ -30,11 +30,11 @@ class App extends Component {
   render() {
     return (
       <div className="weatherApp">
-        <FormComponent 
+        <Form
           fetchWeather={this.fetchWeather} 
           setWeatherData={this.setWeatherData}
         />
-        <WeatherComponent           
+        <WeatherDisplay          
           location={this.state.location} 
           main={this.state.main} 
           description={this.state.description} 

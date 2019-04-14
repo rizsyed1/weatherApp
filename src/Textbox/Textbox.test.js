@@ -1,17 +1,17 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import TextboxComponent from './textboxComponent.js';
+import Textbox from './Textbox.js';
 
 
 
-describe('TextboxComponent should', () => {
+describe('Textbox should', () => {
     it ('exist', () => {
-        expect(TextboxComponent).toBeDefined()   
+        expect(Textbox).toBeDefined()   
     });
 
     it('have a consistent structure', () => {
-        const wrapper = mount(<TextboxComponent />)
+        const wrapper = mount(<Textbox />)
         expect(toJson(wrapper)).toMatchSnapshot()
     })
 })

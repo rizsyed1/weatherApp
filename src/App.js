@@ -17,9 +17,9 @@ class App extends Component {
 
   setWeatherData = data =>{
     this.setState({
-      location: 'Weather forecast for ' + data['name'],
-      description: data['weather'][0]['description'] ,
-      temperature: data['main']['temp']
+      location: data.name,
+      description: data.weather[0].description ,
+      temperature: data.main.temp
     })
   }
 
@@ -34,8 +34,7 @@ class App extends Component {
           fetchWeather={this.fetchWeather} 
           setWeatherData={this.setWeatherData}
         />
-        <WeatherComponent 
-          
+        <WeatherComponent           
           location={this.state.location} 
           main={this.state.main} 
           description={this.state.description} 

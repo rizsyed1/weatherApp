@@ -2,11 +2,11 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import FormComponent from './formComponent.js';
-import TextboxComponent from '../textboxComponent/textboxComponent.js'
 
 describe(('FormComponent'), () => {
     it ('should exist', () => {
-        expect(FormComponent).toBeDefined()
+        const wrapper = mount(<FormComponent />) 
+        expect(wrapper.contains(<form></form>)).to.equal(true)
     });
 
     it('should have a consistent structure', () => {

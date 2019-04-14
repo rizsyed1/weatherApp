@@ -20,13 +20,10 @@ class FormComponent extends React.Component {
     fetch(weatherAPI, {cache: 'no-store'})
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         this.props.setWeatherData(data)
       }).catch(err => {
-        if(err == "TypeError: Cannot read property '0' of undefined") {
-          alert('Please ensure you have entered a valid city name and try again')  
-        } else {
-          alert(err)
-        }
+        alert(err) // this.props.displayWeatherError()
       })
     }
 

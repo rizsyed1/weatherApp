@@ -22,8 +22,6 @@ class Form extends React.Component {
       .then(data => {
         console.log(data)
         this.props.setWeatherData(data)
-      }).catch(err => {
-        alert(err) // this.props.displayWeatherError()
       })
     }
 
@@ -40,12 +38,14 @@ class Form extends React.Component {
   render() {
     return (
       <form className='formContainer'>
-        <Textbox className='textAndSubmitComponents' 
-        city={this.state.city} 
-        handleChange={this.handleChange}
+        <Textbox 
+          className='textAndSubmitComponents' 
+          city={this.state.city} 
+          handleChange={this.handleChange}
         />
-        <SubmitButton className='textAndSubmitComponents' 
-        handleSubmit={this.handleSubmit} 
+        <SubmitButton 
+          className='textAndSubmitComponents' 
+          handleSubmit={this.handleSubmit} 
         />
         <div className='iconClockContainer'>
           <span className='label'>
@@ -54,11 +54,12 @@ class Form extends React.Component {
             icon={faCloudSunRain} />
             Find a forecast
           </span>
-          <Clock className='time' 
-          format={'HH:mm:ss'} 
-          ticking={true} 
-          timezone={'UK'}
-          />
+            <Clock 
+              className='time' 
+              format={'HH:mm:ss'} 
+              ticking={true} 
+              timezone={'UK'}
+            />
         </div>
       </form>
     )

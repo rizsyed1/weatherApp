@@ -43,6 +43,10 @@ class Form extends React.Component {
     const {celsius} = this.props
     return (
       <form className='formContainer'>
+        <UnitButton 
+          unitChange={this.unitChange} 
+          celsius={celsius}
+        />
         <TextInput
           className='textAndSubmitComponents' 
           city={this.state.city} 
@@ -60,10 +64,6 @@ class Form extends React.Component {
             />
             Find a forecast
           </span>
-          <UnitButton 
-            unitChange={this.unitChange} 
-            celsius={celsius}
-          />
            <Clock 
             className='time' 
             format={'HH:mm:ss'} 

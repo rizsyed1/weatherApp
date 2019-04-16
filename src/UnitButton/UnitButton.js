@@ -4,14 +4,14 @@ import './UnitButton.css';
 function UnitButton({celsius, unitChange}) {
     if(celsius){
         return(
-            <button type='button' onClick={unitChange}>
-                To °F
+            <button className ='unitButton' type='button' onClick={unitChange}>
+                to °F
             </button>
         )
     } else {
         return (
-            <button type='button' onClick={unitChange}>
-                To °C
+            <button className ='unitButton' type='button' onClick={unitChange}>
+                to °C
             </button>
         )
     }

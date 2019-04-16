@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSunRain } from '@fortawesome/free-solid-svg-icons'
 import Clock from 'react-live-clock';
 import SubmitButton from '../SubmitButton/SubmitButton.js';
-import Textbox from '../Textbox/Textbox.js';
+import TextInput from '../TextInput/TextInput.js';
 import './Form.css';
+import UnitButton from '../UnitButton/UnitButton.js'
 
 class Form extends React.Component {
   constructor(props){
@@ -14,13 +15,16 @@ class Form extends React.Component {
     }
   }
 
+  unitChange = () => {
+    this.props.tempConvertor()
+  } 
+
   fetchWeather = () => {
     let cityName = this.state.city;
     let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=a1a331f3fdba57d905c6274db55f1dc4`
     fetch(weatherAPI, {cache: 'no-store'})
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         this.props.setWeatherData(data)
       })
     }
@@ -36,9 +40,10 @@ class Form extends React.Component {
 
 
   render() {
+    const {celsius} = this.props
     return (
       <form className='formContainer'>
-        <Textbox 
+        <TextInput
           className='textAndSubmitComponents' 
           city={this.state.city} 
           handleChange={this.handleChange}
@@ -50,16 +55,21 @@ class Form extends React.Component {
         <div className='iconClockContainer'>
           <span className='label'>
             <FontAwesomeIcon 
-            className='weatherIcon' 
-            icon={faCloudSunRain} />
+              className='weatherIcon' 
+              icon={faCloudSunRain} 
+            />
             Find a forecast
           </span>
-            <Clock 
-              className='time' 
-              format={'HH:mm:ss'} 
-              ticking={true} 
-              timezone={'UK'}
-            />
+          <UnitButton 
+            unitChange={this.unitChange} 
+            celsius={celsius}
+          />
+           <Clock 
+            className='time' 
+            format={'HH:mm:ss'} 
+            ticking={true} 
+            timezone={'UK'}
+          />
         </div>
       </form>
     )

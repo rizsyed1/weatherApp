@@ -12,11 +12,12 @@ class App extends Component {
       location: '',
       description: '',
       temperature: '',
-      error: false
+      error: false,
+      celsius: true
     }
 }
 
-  setWeatherData = data =>{
+  setWeatherData = data => {
     if (data.message === 'city not found'){
       this.setState({
         location: '',
@@ -35,17 +36,32 @@ class App extends Component {
     }
   }
 
+  tempConvertor = () => {
+    if(this.state.celsius) {    
+      this.setState({
+        temperature: ((this.state.temperature * 9/5) + 32).toFixed(1),
+        celsius: false
+      });
+    } else {
+      this.setState({
+        temperature:((this.state.temperature - 32) * 5/9).toFixed(1),
+        celsius: true
+      });
+    }
+    
+  }
 
   render() {    
     return (
       <div className="weatherApp">
         <Form
-          fetchWeather={this.fetchWeather} 
           setWeatherData={this.setWeatherData}
-          displayWeatherError={this.displayWeatherError}
+          celsius={this.state.celsius}
+          tempConvertor={this.tempConvertor}
         />
         <ErrorWarning error={this.state.error} />
-        <WeatherDisplay          
+        <WeatherDisplay
+          celsius={this.state.celsius}        
           location={this.state.location} 
           main={this.state.main} 
           description={this.state.description} 

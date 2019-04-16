@@ -37,16 +37,18 @@ class App extends Component {
   }
 
   tempConvertor = () => {
-    if(this.state.celsius) {    
+    if(this.state.celsius && this.state.location) {    
       this.setState({
         temperature: ((this.state.temperature * 9/5) + 32).toFixed(1),
         celsius: false
       });
+    } else if(!this.state.celsius && this.state.location) {
+        this.setState({
+          temperature:((this.state.temperature - 32) * 5/9).toFixed(1),
+          celsius: true
+        });
     } else {
-      this.setState({
-        temperature:((this.state.temperature - 32) * 5/9).toFixed(1),
-        celsius: true
-      });
+        return
     }
     
   }

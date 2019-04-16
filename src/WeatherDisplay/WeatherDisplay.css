@@ -17,23 +17,8 @@ h4{
 
 }
 
-@media (min-width: 1024px){
-    h4{
-        display: inline;
-        font-size: 50px;
-    }
-    
+@media (min-width: 1024px){    
     .cityName{
         font-size: 70px;
-    }
-    
-    
-    
-    .forecastContainer{
-        display: flex;
-        justify-content: space-around;
-        margin-left: 20%;
-        margin-right: 20%;
-    
     }
 }

@@ -7,13 +7,12 @@
     padding: 0.6% 5%;
 }
 
+.unitButton:hover {
+    cursor: pointer;
+}
+
 @media (min-width: 1024px){
     .unitButton{
         font-size: 2em;
-        border-radius: 6px;
-        background-color:#CAE4DB;
-        color: #00303F;
-        margin-right: 3%;
-        padding: 0.6% 5%;
     }
 }

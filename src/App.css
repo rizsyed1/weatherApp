@@ -1,3 +1,14 @@
+html{
+  background-color:	#CAE4DB;
+  color: #00303F;
+}
+
+.weatherApp {
+  text-align: center;
+  height: 100vh;
+}
+
+
 @media (min-width: 1024px){
   html{
     background-color:	#CAE4DB;

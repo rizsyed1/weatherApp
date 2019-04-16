@@ -1,6 +1,4 @@
 .formContainer{
-    margin-left: 25%;
-    margin-right: 25%;
     background-color: #7A9D96;
     color: white;
     padding: 0.3% 0.6%;	
@@ -13,12 +11,12 @@
 }
 
 time{
-    padding-top: 17px;
-    font-size: 50px;
+    padding-top: 1%;
+    font-size: 1em;
 }
 
 .label{
-    font-size: 50px;
+    font-size: 1em;
     text-align: left;
     margin-left: 1%;
     margin-top: 1%;
@@ -26,4 +24,36 @@ time{
 
 .textAndSubmitComponents{
     display: inline-block;
+}
+
+@media (min-width: 1024px){
+    .formContainer{
+        margin-left: 25%;
+        margin-right: 25%;
+        background-color: #7A9D96;
+        color: white;
+        padding: 0.3% 0.6%;	
+        
+    }
+    
+    .iconClockContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    time{
+        padding-top: 1%;
+        font-size: 3em;
+    }
+    
+    .label{
+        font-size: 3em;
+        text-align: left;
+        margin-left: 1%;
+        margin-top: 1%;
+    }
+    
+    .textAndSubmitComponents{
+        display: inline-block;
+    }
 }

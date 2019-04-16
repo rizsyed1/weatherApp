@@ -1,8 +1,19 @@
 .unitButton{
-    font-size: 30px;
+    font-size: 1em;
     border-radius: 6px;
     background-color:#CAE4DB;
     color: #00303F;
     margin-right: 3%;
     padding: 0.6% 5%;
+}
+
+@media (min-width: 1024px){
+    .unitButton{
+        font-size: 2em;
+        border-radius: 6px;
+        background-color:#CAE4DB;
+        color: #00303F;
+        margin-right: 3%;
+        padding: 0.6% 5%;
+    }
 }

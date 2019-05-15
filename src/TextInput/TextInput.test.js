@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import TextInput from './TextInput.js';
 
@@ -7,11 +7,7 @@ import TextInput from './TextInput.js';
 
 describe('TextInput should', () => {
     it ('exist', () => {
-        expect(Textbox).toBeDefined()   
+        let wrapper = shallow(<TextInput />)
+        expect(wrapper).toBeDefined()   
     });
-
-    it('have a consistent structure', () => {
-        const wrapper = mount(<TextInput />)
-        expect(toJson(wrapper)).toMatchSnapshot()
-    })
 })

@@ -1,20 +1,12 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 import Form from './Form.js';
 
-describe(('Form'), () => {
+describe(('Form component'), () => {
     it ('should exist', () => {
-        const wrapper = mount(<Form />) 
-        expect(wrapper.contains(<form></form>)).to.equal(true)
+        const wrapper = shallow(<Form />) 
+        expect(wrapper).toBeDefined()
     });
-
-    it('should have a consistent structure', () => {
-        const wrapper = mount(<Form/>)
-        expect(toJson(wrapper)).toMatchSnapshot()
-    })
-
-
 })
 
 

@@ -68,7 +68,7 @@ class Form extends React.Component {
             className='time' 
             format={'HH:mm:ss'} 
             ticking={true} 
-            timezone={'UK'}
+            timezone={'GMT'}
           />
         </div>
       </form>
